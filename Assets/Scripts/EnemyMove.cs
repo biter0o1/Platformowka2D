@@ -18,9 +18,10 @@ public class EnemyMove : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-            rb.velocity = new Vector2(Mathf.Clamp(rb.velocity.x, -1f, 1f) * -1, 0f) * moveSpeed;
-            transform.localScale = new Vector3(Mathf.Clamp(rb.velocity.x, -0.5f, 0.5f) * -1, 0.5f, 1f);
+        rb.velocity = new Vector2(Mathf.Clamp(rb.velocity.x, -1f, 1f) * -1, 0f) * moveSpeed;
+        transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
     }
+
 
     // Update is called once per frame
     void Update()
